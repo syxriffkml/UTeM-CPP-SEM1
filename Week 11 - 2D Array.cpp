@@ -124,19 +124,22 @@ void viewBus(int vB[], string vDay[]) {
 
 void viewAll(int vA[][DAY], string bA[], string dA[]) { //int passenger[][DAY], string bussList[], string dayList[]
 
-	int total = 0;
+	int total[3] = {0};
+	int sum = 0;
 
 	cout << "Number of Passenger: Bus X Day \n";
 	for (int i = 0; i < BUS; i++) {
 		cout << "Plate Number : " << bA[i] << endl; //display plate number
 		for (int j = 0; j < DAY; j++) {
 			cout << dA[j] << ": " << vA[i][j] << " passengers\n";
-			total = total + vA[i][j];
+			total[i] = total[i] + vA[i][j];
 		}
-		cout << "The total numbers of passenger for bus " << bA[i] << " is " << total; // question (a)
+		cout << "The total numbers of passenger for bus " << bA[i] << " is " << total[i]; // question (a)
+		sum = sum + total[i];
 		cout << endl << endl;
 	}
-	cout << endl;
+	cout << "Total number of passenger for all the bus is " << sum;
+	cout << endl << endl << endl;;
 }
 
 void viewTotalDay(int passenger[][DAY], int hari, string dayList[]) { //question (b)
@@ -145,5 +148,5 @@ void viewTotalDay(int passenger[][DAY], int hari, string dayList[]) { //question
 	for (int i = 0; i < BUS; i++) {
 		sum = sum + passenger[i][hari];
 	}
-	cout << "Total number of passengers in " << dayList[hari] << " is " << sum << endl << endl;
+	cout << "Total number of passengers in " << dayList[hari] << " is " << sum << " passengers" <<endl << endl;
 }
