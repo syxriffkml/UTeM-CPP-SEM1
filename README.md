@@ -1,2 +1,2 @@
 # UTeM CPP SEM1
- All c++ sem1 weekly lab codes
+ all UTeM c++ sem1 weekly lab codes
