@@ -9,7 +9,7 @@ int menuDay(string d[]); //string daylist[]
 void viewBusDay(int p); //int passenger
 void viewBus(int vB[], string vDay[]); //int passenger[], string dayList[]
 void viewAll(int vA[][DAY], string bA[], string dA[]); //int passenger[][DAY], string bussList[], string dayList[]
-void viewTotalDay(int [][DAY], int , string []); //question (b)
+void viewTotalDay(int [][DAY], int , string [], string []); //question (b)
 
 int main() {
 
@@ -43,7 +43,7 @@ int main() {
 		}
 		else if (operation == 4) { //question (b)
 			int hari = menuDay(dayList);
-			viewTotalDay(passenger,hari,dayList);
+			viewTotalDay(passenger,hari,dayList,busList);
 		}
 		else {
 			cout << "Program terminated";
@@ -142,10 +142,11 @@ void viewAll(int vA[][DAY], string bA[], string dA[]) { //int passenger[][DAY], 
 	cout << endl << endl << endl;;
 }
 
-void viewTotalDay(int passenger[][DAY], int hari, string dayList[]) { //question (b)
+void viewTotalDay(int passenger[][DAY], int hari, string dayList[],string busList[] ) { //question (b)
 
 	int sum = 0;
 	for (int i = 0; i < BUS; i++) {
+		cout << "Number of passangers in bus " << busList[i] << " in " << dayList[hari] << " is " << passenger[i][hari] << endl;
 		sum = sum + passenger[i][hari];
 	}
 	cout << "Total number of passengers in " << dayList[hari] << " is " << sum << " passengers" <<endl << endl;
