@@ -1,2 +1,2 @@
 # UTeM CPP SEM1
- all UTeM c++ sem1 weekly lab codes
+ all UTeM BITP1113 C++ sem1 weekly lab codes
